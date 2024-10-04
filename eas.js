@@ -1,13 +1,15 @@
+const maxGrid = 100
 const displayGrid = document.querySelector("#displayGrid");
-createGrid(16);
-
-
 const button = document.querySelector('button');
 
+//create first grid for page
+createGrid(16);
+
+//check for user creating a new grid
 button.addEventListener("click", () => {
     let gridSize = prompt("Enter the size of the grid between 1 and 100");
     console.info ("gridSize = " + gridSize);
-    if (gridSize > 0 && gridSize < 101){
+    if (gridSize > 0 && gridSize <= maxGrid){
         displayGrid.removeChild(displayGrid.firstChild);
         displayGrid.appendChild(createGrid(gridSize));
     }
@@ -33,7 +35,10 @@ function createGrid(numberOfRows){
         const gridRow = createRow(rowLength);
         grid.appendChild (gridRow);
     }
+    //add grid to DOM
     displayGrid.appendChild(grid);
+    //create listeners for new square elements 
+    //(old listeners deleted when old grid deleted)
     const colorSquare = document.querySelectorAll(".square");
     colorSquare.forEach((item) =>
         item.addEventListener("mouseover", () => item.className = "colored")
