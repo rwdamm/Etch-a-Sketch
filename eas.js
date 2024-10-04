@@ -1,4 +1,5 @@
-
+const displayGrid = document.querySelector("#displayGrid");
+createGrid(16);
 
 function createRow(numberOfElements){
     const row = document.createElement("div");
@@ -9,7 +10,7 @@ function createRow(numberOfElements){
         row.appendChild(square)
 
     }
-    //console.info(row);
+    displayRow.appendChild(row);
     return row;
 }
 
@@ -21,5 +22,5 @@ function createGrid(numberOfRows){
         const gridRow = createRow(rowLength);
         grid.appendChild (gridRow);
     }
-    return grid
+    displayGrid.appendChild(grid);
 }
