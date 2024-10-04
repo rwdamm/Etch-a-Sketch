@@ -1,6 +1,6 @@
 .square {
     background-color: lightgrey;
-    border: 2px solid red;
+    border: 1px solid red;
     flex: 1 1;
   }
 
@@ -11,9 +11,20 @@
 
   .grid {
     display: flex;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     flex-direction: column;
     margin: 0 auto;
     border: 5px solid black;
+  }
+
+  .colored {
+    background-color: black;
+    border: 1px solid red;
+    flex: 1 1;
+  }
+
+  #gridChange{
+    display: flex;
+    margin: 0 auto ;
   }
